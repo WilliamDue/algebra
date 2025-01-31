@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\title{Section 1.1}
+
+\begin{document}
+
+\maketitle
+\section{Exercise}
+\begin{enumerate}[label=(\alph*)]
+    \item Is not associative since: $(a - a) - a = -a$ and $a - (a - a) = a$
+    i.e. $a \neq -a$.
+    \item Is associative since:
+    \begin{align*}
+        a \star (b \star c) &= a + (b + c + bc) + a(b + c + bc) \\
+        &= a + b + c + bc + ab + ac + abc \\
+        &= a + b + ab + c + ac + bc + abc \\
+        &= (a + b + ab) + c + (a + b + ab)c \\
+        &= (a \star b) \star c 
+    \end{align*}
+    \item Is not associative since:
+    \begin{align*}
+        a \star (b \star c) &= \frac{a + \frac{b + c}{5}}{5} \\
+        &= \frac{\frac{5a}{5} + \frac{b + c}{5}}{5} \\
+        &= \frac{5a + b + c}{10} \\
+        &\neq \frac{a + b + 5c}{10} \\
+        &= \frac{\frac{a + b}{5} + \frac{5c}{5}}{5} \\
+        &= \frac{\frac{a + b}{5} + c}{5} \\
+        &= (a \star b) \star c 
+    \end{align*}
+    \item Is not associative since:
+    \begin{align*}
+        (a, b) \star ((c, d) \star (e, f)) &= (a, b) \star (cf + de, df)  \\
+        &= (a(cf + de) + bdf, bdf) \\
+        &= (acf + ade + bdf, bdf) \\
+        &= (acf + ade + bdf, bdf) \\
+        &\neq (adf + bcf + bde, bdf) \\
+        &= ((ad + bc)f + bde, bdf) \\
+        &= (ad + bc, bd) \star (e, f) \\
+        &= ((a, b) \star (c, d)) \star (e, f)
+    \end{align*}
+    \item Is not associative since:
+    \begin{align*}
+        a \star (b \star c) &= \frac{a}{\frac{b}{c}} \\
+        &= a \left(\frac{b}{c}\right)^{-1} \\
+        &= a \left(\frac{c}{b}\right) \\
+        &= \frac{ac}{b} \\
+        &\neq \frac{a}{bc} \\
+        &= \left(\frac{a}{b}\right) c^{-1} \\
+        &= \frac{\frac{a}{b}}{c} \\
+        &= a \star (b \star c)
+    \end{align*}
+\end{enumerate}
+\section{Exercise}
+\begin{enumerate}[label=(\alph*)]
+    \item Is not commutative since $a - 2a = -a \neq a = 2a - a$.
+    \item Is commutative since:
+    \begin{align*}
+        a \star b &= a + b + ab \\
+        &= b + a + ba \\
+        &= b \star a
+    \end{align*}
+    \item Is commutative since:
+    \begin{align*}
+        a \star b &= \frac{a + b}{5} \\
+        &= \frac{b + a}{5} \\
+        &= b \star a
+    \end{align*}
+    \item Is associative since:
+    \begin{align*}
+        (a, b) \star (c, d) &= (ad + bc, bd) \\
+        &= (cb + ad, db) \\
+        &= (c, d) \star (a, b) 
+    \end{align*}
+    \item Is not commutative since $\frac{1}{2} \neq \frac{2}{1}$
+\end{enumerate}
+\section{Exercise}
+\begin{proof}
+    Let $\overline{a}, \overline{b}, \overline{c} \in \mathbb{Z}/n\mathbb{Z}$.
+    Using $\overline{a} + \overline{b} = \overline{a + b}$ we can show that:
+    \begin{align*}
+        (\overline{a} + \overline{b}) + \overline{c} &= \overline{a + b} + \overline{c} \\
+        &= \overline{a + b + c} \\
+        &= \overline{a} + \overline{b + c} \\
+        &= \overline{a} + (\overline{b} + \overline{c}) \\
+    \end{align*}
+\end{proof}
+\section{Exercise}
+\begin{proof}
+    Let $\overline{a}, \overline{b}, \overline{c} \in \mathbb{Z}/n\mathbb{Z}$.
+    Using $\overline{a} \cdot \overline{b} = \overline{a \cdot b}$ we can show that:
+    \begin{align*}
+        (\overline{a} \cdot \overline{b}) \cdot \overline{c} &= \overline{a \cdot b} \cdot \overline{c} \\
+        &= \overline{a \cdot b \cdot c} \\
+        &= \overline{a} \cdot \overline{b \cdot c} \\
+        &= \overline{a} \cdot (\overline{b} \cdot \overline{c}) \\
+    \end{align*}
+\end{proof}
+\section{Exercise}
+\begin{proof}
+    We wish to show that $(\mathbb{Z}/n\mathbb{Z}, \cdot)$ for any $n > 1$ is
+    not a group. For $(\mathbb{Z}/n\mathbb{Z}, \cdot)$ to be a group then there
+    must exists an inverse $\overline{a}$ such that $\overline{a} \cdot
+    \overline{0} = \overline{1}$. If we take the representative of
+    $\overline{a}$ to be $a$ and the representative of $\overline{0}$ to be $0$
+    then we get $a \cdot 0 = 0$ for any $a$ so $\overline{a} \cdot \overline{0}
+    = \overline{0}$. Hence no inverse exists of $\overline{0}$ and therefore
+    $(\mathbb{Z}/n\mathbb{Z}, \cdot)$ is not a group.
+\end{proof}
+\section{Exercise}
+\begin{enumerate}[label=(\alph*)]
+    \item Is not a group since the inverse to $\frac{2a}{2b + 1}$ is $\frac{2b +
+    1}{2a}$ which does no have an odd denominator so it does not belong in the
+    original set meaning $\frac{2a}{2b + 1}$ has no inverse .
+    \item Is not a group since the inverse to $\frac{2a + 1}{2b}$ is
+    $\frac{2b}{2a + 1}$ which does no have an even denominator.
+    \item Is not a group since $\frac{1}{n} < 1$ is in the set but $1 \leq n$ is
+    its inverse.
+    \item Is not a group since $n \geq 1$ is in the set but $\frac{1}{n} < 1$ is
+    its inverse.
+\end{enumerate}
+\end{document}
