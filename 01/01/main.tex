@@ -116,14 +116,99 @@
 \end{proof}
 \section{Exercise}
 \begin{enumerate}[label=(\alph*)]
-    \item Is not a group since the inverse to $\frac{2a}{2b + 1}$ is $\frac{2b +
-    1}{2a}$ which does no have an odd denominator so it does not belong in the
-    original set meaning $\frac{2a}{2b + 1}$ has no inverse .
-    \item Is not a group since the inverse to $\frac{2a + 1}{2b}$ is
-    $\frac{2b}{2a + 1}$ which does no have an even denominator.
-    \item Is not a group since $\frac{1}{n} < 1$ is in the set but $1 \leq n$ is
-    its inverse.
-    \item Is not a group since $n \geq 1$ is in the set but $\frac{1}{n} < 1$ is
-    its inverse.
+    \item It is easy to see that the inverse $\frac{-a}{2b + 1}$ and identity
+    $0$ exisist. Addition is also associative so remaining concern is if $+$
+    always results in an element with an uneven denominator.
+    \begin{align*}
+        \frac{a}{2b + 1} + \frac{c}{2d + 1} &= \frac{a(2d + 1) +  c(2b + 1)}{(2b + 1)(2d + 1)} \\
+        &= \frac{a(2d + 1) +  c(2b + 1)}{4bd + 2b + 2d + 1} \\
+        &= \frac{a(2d + 1) +  c(2b + 1)}{2(2bd + b + d) + 1} \\ 
+    \end{align*}
+    The denominator is always uneven so the set is closed under addition.
+    \item Once again we only need to show the denominator is even.
+    \begin{align*}
+        \frac{a}{2b} + \frac{c}{2d} &= \frac{a2d +  c2b}{2(b2d)} 
+    \end{align*}
+    The denominator is always even so the set is closed under addition.
+    \item This is not a valid group since $\frac{1}{2}$ is an element in the set
+    but $\frac{1}{2} + \frac{1}{2} = \frac{1}{1}$ is too large to be in set,
+    hence the set is not closed under addition.
+    \item This is not a valid group since both $2$ and $\frac{-2}{3}$ are
+    members but $2 + \frac{-2}{3} = \frac{1}{2}$ is too small to be an element
+    in the set, hence the set is not closed under addition.
+    \item Clearly an inverse always exists $\frac{-a}{1}$ or $\frac{-a}{2}$ and
+    we have the identity $0$ and an associative operation. It remains to show
+    that the set is closed under addition. 
+    \begin{align*}
+        \frac{a}{1} + \frac{b}{1} &= \frac{a + b}{1} \\
+        \frac{a}{2} + \frac{b}{2} &= \frac{a + b}{2} \\
+        \frac{a}{2} + \frac{b}{1} &= \frac{a + 2b}{2}
+    \end{align*}
+    As one can see it is closed under addition.
+    \item First we observe that $\frac{1}{2} + \frac{1}{3} = \frac{5}{6}$, since
+    there does no exist a number which both divide $5$ and $6$ then the fraction
+    can not be simplied and we have an element which can does not belong to the
+    original set. Meaning this set is not closed under addition and therefore
+    not an group.
+\end{enumerate}
+\section{Exercise}
+\begin{proof}
+    By definition we have that $G$ must be closed under $\star$ since we always
+    remove the integral part leading to $0 \leq x \star y < 1$.
+
+    Now we wish to show that the operation is associative, first we realize:
+    \begin{align*}
+        [x - [y]] = [x] - [y] 
+    \end{align*}
+    This holds since $[y]$ is already an integer so we can subtract it later.
+    Now we can derive the following and show it is associative:
+    \begin{align*}
+        (x \star y) \star z &= (x \star y) + z - [x \star y + z] \\
+        &= (x + y - [x + y]) + z - [(x + y - [x + y]) + z] \\
+        &= x + y + z - [x + y + z - [x + y]] - [x + y] \\
+        &= x + y + z - ([x + y + z] - [x + y]) - [x + y] \\
+        &= x + y + z - [x + y + z] + [x + y] - [x + y] \\
+        &= x + y + z - [x + y + z] \\
+        &= x + y + z - [x + y + z] + [y + z] - [y + z] \\
+        &= x + y + z - ([x + y + z] - [y + z]) - [y + z] \\
+        &= x + y + z - [x + y + z - [y + z]] - [y + z] \\
+        &= x + (y + z - [y + z]) - [x + (y + z - [y + z])] \\
+        &= x \star (y + z - [y + z]) \\
+        &= x \star (y \star z) 
+    \end{align*}
+    We have an identity $0$ since:
+    \begin{align*}
+        x \star 0 = x + 0 - [x + 0] = x - [x] = 0 + x - [0 + x] = 0 \star x
+    \end{align*}
+    And we have an inverse $-x$ since:
+    \begin{align*}
+        x \star -x &= x + (-x) - [x + (-x)] \\
+        &= 0 - [0] \\
+        &= 0 \\
+        &= 0 - [0] \\
+        &= (-x) + x - [(-x) + x] \\
+        &= -x \star x
+    \end{align*}
+    Hence $(G, \star)$ must be a group.
+\end{proof}
+\section{Exercise}
+\begin{enumerate}[label=(\alph*)]
+    \item $(G, \cdot)$ must be closed under multiplciation since given
+    $z, w \in G$ then it must hold for some $n, m \in \mathbb{Z}^+$ that
+    $(z^n)^x \cdot (w^m)^y = 1$ for all $x, y \in \mathbb{R}$. Since $z^n = w^m
+    = 1$ and $1^x = 1$ for all $x \in \mathbb{R}$ we can derive:
+    \begin{align*}
+        1 &= \left(z^n\right)^m \cdot \left(w^m\right)^n \\
+        &= z^{mn} \cdot w^{mn} \\
+        &= \left(zw\right)^{nm} 
+    \end{align*}
+    Hence $G$ is closed under multiplciation because $\left(zw\right)^{nm} = 1$,
+    therefore $zw \in G$. Lastly $(G, \cdot)$ is a group since $1 \in G$ is the
+    identity. The inverse to $z$ is $z^{n - 1}$ since $z \cdot z^{n - 1} = z^n =
+    1$ for some $n \in \mathbb{Z}^+$ and $z^{n - 1} \in G$ because $(z^{n -
+    1})^n = z^{n \cdot n - n} = \frac{z^{n \cdot n}}{z^n} = z^{n \cdot n} = (z^{n})^n = 1$. And multiplication is associative.
+    \item  $(G, +)$ is not a group since $1 \in G$ but $1 + 1 = 2 \notin G$
+    since there exists no $n \in \mathbb{Z}^+$ such that $2^n = 1$ hence $G$ is
+    not closed under addition and therefore not a group.
 \end{enumerate}
 \end{document}
