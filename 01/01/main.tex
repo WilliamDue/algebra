@@ -193,22 +193,52 @@
 \end{proof}
 \section{Exercise}
 \begin{enumerate}[label=(\alph*)]
-    \item $(G, \cdot)$ must be closed under multiplciation since given
-    $z, w \in G$ then it must hold for some $n, m \in \mathbb{Z}^+$ that
-    $(z^n)^x \cdot (w^m)^y = 1$ for all $x, y \in \mathbb{R}$. Since $z^n = w^m
-    = 1$ and $1^x = 1$ for all $x \in \mathbb{R}$ we can derive:
+    \item First it must be shown that $(G, \cdot)$ is closed under
+    multiplciation. Given $z, w \in G$ then it must hold for some $n, m \in
+    \mathbb{Z}^+$ that $(z^n)^x \cdot (w^m)^y = 1$ for all $x, y \in
+    \mathbb{R}$. Since $z^n = w^m = 1$ and $1^x = 1$ for all $x \in \mathbb{R}$
+    we can derive:
     \begin{align*}
         1 &= \left(z^n\right)^m \cdot \left(w^m\right)^n \\
         &= z^{mn} \cdot w^{mn} \\
         &= \left(zw\right)^{nm} 
     \end{align*}
-    Hence $G$ is closed under multiplciation because $\left(zw\right)^{nm} = 1$,
+    Hence $G$ is closed under multiplciation since $\left(zw\right)^{nm} = 1$,
     therefore $zw \in G$. Lastly $(G, \cdot)$ is a group since $1 \in G$ is the
     identity. The inverse to $z$ is $z^{n - 1}$ since $z \cdot z^{n - 1} = z^n =
     1$ for some $n \in \mathbb{Z}^+$ and $z^{n - 1} \in G$ because $(z^{n -
-    1})^n = z^{n \cdot n - n} = \frac{z^{n \cdot n}}{z^n} = z^{n \cdot n} = (z^{n})^n = 1$. And multiplication is associative.
-    \item  $(G, +)$ is not a group since $1 \in G$ but $1 + 1 = 2 \notin G$
+    1})^n = z^{n \cdot n - n} = \frac{z^{n \cdot n}}{z^n} = z^{n \cdot n} =
+    (z^{n})^n = 1$. And multiplication is associative.
+    
+    \item $(G, +)$ is not a group since $1 \in G$ but $1 + 1 = 2 \notin G$
     since there exists no $n \in \mathbb{Z}^+$ such that $2^n = 1$ hence $G$ is
     not closed under addition and therefore not a group.
+\end{enumerate}
+\section{Exercise}
+\begin{enumerate}[label=(\alph*)]
+    \item $(G, +)$ is closed under addition since given $a + b\sqrt{2},
+    c + d\sqrt{2} \in G$ then:
+    \begin{align*}
+        a + b\sqrt{2} + c + d\sqrt{2} = (a + c) + (b + d)\sqrt{2} \in G
+    \end{align*}
+    $(G, +)$ is also a group since since $0$ is the identity, the inverse to
+    $a + b\sqrt{2}$ is $(-a) + (-b\sqrt{2})$, and addition is associative.
+    \item $(G, \cdot)$ is closed under addition since given $a + b\sqrt{2},
+    c + d\sqrt{2} \in G$ then:
+    \begin{align*}
+        (a + b\sqrt{2}) \cdot (c + d\sqrt{2}) &= c(a + b\sqrt{2}) + d\sqrt{2}(a + b\sqrt{2}) \\
+        &= ca + cb\sqrt{2} + ad\sqrt{2} + db(\sqrt{2})^2 \\
+        &= (ca + db2) + (cb + ad)\sqrt{2} \in G
+    \end{align*}
+    $(G, \cdot)$ is also a group since since $1$ is the identity, the inverse to
+    $a + b\sqrt{2}$ is $\frac{1}{a + b\sqrt{2}}$ which is in $G$ since:
+    \begin{align*}
+        \frac{1}{a + b\sqrt{2}} &= \frac{a - b\sqrt{2}}{(a - b\sqrt{2})(a + b\sqrt{2})} \\
+        &= \frac{a - b\sqrt{2}}{a(a - b\sqrt{2}) + b\sqrt{2}(a - b\sqrt{2})} \\
+        &= \frac{a - b\sqrt{2}}{a^2 - ab\sqrt{2} + ab\sqrt{2} - b^2(\sqrt{2})^2} \\
+        &= \frac{a - b\sqrt{2}}{a^2 - 2b^2} \\
+        &= \frac{a}{a^2 - 2b^2} - \frac{b}{a^2 - 2b^2}\sqrt{2} \in G \\
+    \end{align*}
+    And addition is associative.
 \end{enumerate}
 \end{document}
