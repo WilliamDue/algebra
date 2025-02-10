@@ -311,5 +311,82 @@
     \overline{17}^{2} = 1; |\overline{17}| = 2
 \end{align*}
 \section{Exercise}
-
+\begin{proof}
+    Let $P(n): (a_1a_2\cdots a_n)^{-1} = a_{n}^{-1}a_{n - 1}^{-1} \cdots
+    a_{1}^{-1}$, we wish to show this predicate holds for $2 \leq n$ by
+    induction. By Proposition 1. we have the base case $P(2): (a_1a_2)^{-1} =
+    a_{2}^{-1}a_{1}^{-1}$. Now assume $P(n)$ holds, which to that then
+    $P(n + 1)$ holds by Proposition 1:
+    \begin{gather*}
+        (a_1a_2\cdots a_n)^{-1} = a_{n}^{-1}a_{n - 1}^{-1} \cdots a_{1}^{-1} \\
+        \iff \\
+        a_{n + 1}^{-1} (a_1a_2\cdots a_n)^{-1} = a_{n + 1}^{-1}a_{n}^{-1}a_{n - 1}^{-1} \cdots a_{1}^{-1} \\
+        \iff \\
+        (a_1a_2\cdots a_n a_{n + 1})^{-1} = a_{n + 1}^{-1}a_{n}^{-1}a_{n - 1}^{-1} \cdots a_{1}^{-1}
+    \end{gather*}
+\end{proof}
+\section{Exercise}
+\begin{proof}
+    First we wish to show given $x^2 = 1$ then $|x| = 1$ or $|x| = 2$ exists, by
+    $x^2 = 1$ we have: 
+    \begin{gather*}
+        x^2 = 1 \iff x = x^{-1} 
+    \end{gather*}
+    So $x$ is its own inverse and either $x = 1$ or $x \neq 1$. The first case
+    exists for any group $1 \cdot 1 = 1$ and we have $|x| = 1$. The second case
+    exists since there exists a group $(\mathbb{Z}/4\mathbb{Z}, +)$ where
+    $\overline{2} + \overline{2} = \overline{0}$ so we have $|x| = 2$.
+    
+    Let $x^2 = 1$ then it must hold that $|x| \leq 2$ and if $x^n = 1$ for $n
+    > 2$ then $|x| \leq 2$ since $1$ or $2$ is smaller than $n$.
+    
+    Let $|x| \leq 2$ then $x^n = 1$ for $1 \leq n \leq 2$, if $x^1 = 1$ then $x
+    = 1$ and $x^2 = 1$ holds, so $x^2 = 1$ holds for any $|x| \leq 2$. So the
+    biimplication holds in both directions.
+\end{proof}
+\section{Exercise}
+\begin{proof}
+    Let $|x| = n$ for some $n > 1$ then:
+    \begin{align*}
+        x^n = 1 &\iff x^nx^{-1} = x^{-1} \\
+        & \iff x^{n - 1}xx^{-1} = x^{-1} \\
+        &\iff x^{n - 1} = x^{-1}
+    \end{align*}
+\end{proof}
+\section{Exercise}
+\begin{proof}
+    Let $xy = yx$ then:
+    \begin{align*}
+        xy = yx &\iff y^{-1} xy = y^{-1}y x \\
+        &\iff y^{-1} xy = x \\
+        &\iff x^{-1}y^{-1} xy = x^{-1}x \\
+        &\iff x^{-1}y^{-1} xy = 1
+    \end{align*}
+\end{proof}
+\section{Exercise}
+\begin{enumerate}[label=(\alph*)]
+    \item Note: I am not totally satified by this proof but it seems like you
+    would have to do something like this if you want to use the definition of
+    $x^n$.
+    
+    \begin{proof}
+        Let $a, b \in \mathbb{Z}^+$ by definition of $x^ax^b$ then we have:
+        \begin{align*}
+            x^ax^b = \underbrace{xx \cdots x}_{a\text{ times}}\underbrace{xx \cdots x}_{b\text{ times}}
+        \end{align*}
+        If we have $a$ times $x$ and $b$ times $x$ multiplied together then we
+        must in total have $a + b$ times $x$:
+        \begin{align*}
+            \underbrace{xx \cdots x}_{a + b\text{ times}} = x^{a + b}
+        \end{align*}
+        Now by definition of $(x^a)^b$ we have:
+        \begin{align*}
+            (x^a)^b = \underbrace{x^ax^a \cdots x^a}_{b \text{ times}} = \underbrace{\underbrace{xx\cdots x}_{a \text{ times}} \underbrace{xx\cdots x}_{a \text{ times}} \cdots \underbrace{xx\cdots x}_{a \text{ times}}}_{b \text{ times}}
+        \end{align*}
+        Hence we have $b$ times of $a$ times $x$ i.e. $ab$ of $x$:
+        \begin{align*}
+            \underbrace{\underbrace{xx\cdots x}_{a \text{ times}} \underbrace{xx\cdots x}_{a \text{ times}} \cdots \underbrace{xx\cdots x}_{a \text{ times}}}_{b \text{ times}} = x^{ab}
+        \end{align*} 
+    \end{proof}
+\end{enumerate}
 \end{document}
