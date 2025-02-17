@@ -365,28 +365,43 @@
 \end{proof}
 \section{Exercise}
 \begin{enumerate}[label=(\alph*)]
-    \item Note: I am not totally satified by this proof but it seems like you
-    would have to do something like this if you want to use the definition of
-    $x^n$
-    
+    \item 
     \begin{proof}
-        Let $a, b \in \mathbb{Z}^+$ by definition of $x^ax^b$ then we have:
+        Let $P$ be the predicate $P(b): x^a x^b = x^{a + b}$ where $a, b \in
+        \mathbb{Z}^+$. We wish to show this holds forall $b \in \mathbb{Z}^+$.
+        The base case holds since for $b = 1$ then $x^a x = x^{a + 1}$. Given
+        $P(b)$ we can now show $P(b + 1)$ holds.
         \begin{align*}
-            x^ax^b = \underbrace{xx \cdots x}_{a\text{ times}}\underbrace{xx \cdots x}_{b\text{ times}}
+            x^a x^b = x^{a + b} &\iff x^a x^bx = x^{a + b}x \\
+            &\iff x^a x^{b + 1} = x^{a + (b + 1)}
         \end{align*}
-        If we have $a$ times $x$ and $b$ times $x$ multiplied together then we
-        must in total have $a + b$ times $x$:
+    \end{proof}
+
+    \begin{proof}
+        Let $P$ be the predicate $P(b): (x^a)^b = x^{ab}$ where $a, b \in
+        \mathbb{Z}^+$. We wish to show this holds forall $b \in \mathbb{Z}^+$.
+        The base case holds since for $b = 1$ then $(x^a)^1 = x^{a}$. Given
+        $P(b)$ we can now show $P(b + 1)$ holds.
         \begin{align*}
-            \underbrace{xx \cdots x}_{a + b\text{ times}} = x^{a + b}
+            (x^a)^b = x^{ab} &\iff (x^a)^b x^a = x^{ab} x^a \\
+            &\iff (x^a)^{b + 1}  = x^{a(b + 1)} \quad (\text{Holds by previous proof})
         \end{align*}
-        Now by definition of $(x^a)^b$ we have:
+    \end{proof}
+    \item 
+    \begin{proof}
+        Let $P$ be the predicate $P(a): (x^a)^{-1} = x^{-a}$ where $a \in
+        \mathbb{Z}^+$. We wish to show this holds forall $a \in \mathbb{Z}^+$.
+        The base case holds since for $a = 1$ then $(x^1)^{-1} = x^{-1}$. Given
+        $P(a)$ we can now show $P(a + 1)$ holds.
         \begin{align*}
-            (x^a)^b = \underbrace{x^ax^a \cdots x^a}_{b \text{ times}} = \underbrace{\underbrace{xx\cdots x}_{a \text{ times}} \underbrace{xx\cdots x}_{a \text{ times}} \cdots \underbrace{xx\cdots x}_{a \text{ times}}}_{b \text{ times}}
+            (x^a)^{-1} = x^{-a} &\iff (x^a)^{-1} x^{-1} = x^{-a}x^{-1} \\
+            &\iff (x x^a)^{-1} = x^{-(a + 1)} \quad (\text{By Prop 2. and def. of } x^{-a}) \\
+            &\iff (x^{a + 1})^{-1} = x^{-(a + 1)}
         \end{align*}
-        Hence we have $b$ times of $a$ times $x$ i.e. $ab$ of $x$:
-        \begin{align*}
-            \underbrace{\underbrace{xx\cdots x}_{a \text{ times}} \underbrace{xx\cdots x}_{a \text{ times}} \cdots \underbrace{xx\cdots x}_{a \text{ times}}}_{b \text{ times}} = x^{ab}
-        \end{align*} 
+    \end{proof}
+    \item
+    \begin{proof}
+        Let $a, b \in \mathbb{Z}^+$.
     \end{proof}
 \end{enumerate}
 \end{document}
